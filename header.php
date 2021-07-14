@@ -39,11 +39,11 @@
     <nav class="drawer-menu is-sp" id="drawer-menu">
       <ul class="drawer-menu__list">
         <li class="drawer-menu__item"><a href="./news.html" class="drawer-menu__link">NEWS</a></li>
-          <li class="drawer-menu__item"><a href="./service.html" class="drawer-menu__link">SERVICE</a></li>
-          <li class="drawer-menu__item"><a href="./works.html" class="drawer-menu__link">WORKS</a></li>
-          <li class="drawer-menu__item"><a href="./company.html" class="drawer-menu__link">COMPANY</a></li>
-          <li class="drawer-menu__item"><a href="./recruit.html" class="drawer-menu__link">RECRUIT</a></li>
-          <li class="drawer-menu__item"><a href="./contact.html" class="drawer-menu__link">CONTACT</a></li>
+        <li class="drawer-menu__item"><a href="./service.html" class="drawer-menu__link">SERVICE</a></li>
+        <li class="drawer-menu__item"><a href="./works.html" class="drawer-menu__link">WORKS</a></li>
+        <li class="drawer-menu__item"><a href="./company.html" class="drawer-menu__link">COMPANY</a></li>
+        <li class="drawer-menu__item"><a href="./recruit.html" class="drawer-menu__link">RECRUIT</a></li>
+        <li class="drawer-menu__item"><a href="./contact.html" class="drawer-menu__link">CONTACT</a></li>
       </ul>
     </nav>
 
