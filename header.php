@@ -19,14 +19,17 @@
         <img src="<?php get_element_image('logo', 'svg'); ?>" alt="header-logo">
       </a>
       <nav class="header-menu is-pc">
-        <ul class="header-menu__list">
-          <li class="header-menu__item"><a href="./news.html" class="header-menu__link">NEWS</a></li>
-          <li class="header-menu__item"><a href="./service.html" class="header-menu__link">SERVICE</a></li>
-          <li class="header-menu__item"><a href="./works.html" class="header-menu__link">WORKS</a></li>
-          <li class="header-menu__item"><a href="./company.html" class="header-menu__link">COMPANY</a></li>
-          <li class="header-menu__item"><a href="./recruit.html" class="header-menu__link">RECRUIT</a></li>
-          <li class="header-menu__item"><a href="./contact.html" class="header-menu__link">CONTACT</a></li>
-        </ul>
+        <?php
+        wp_nav_menu(
+          //.header-listを置き換えて、PC用メニューを動的に表示する
+          array(
+            'depth' => 1,
+            'theme_location' => 'global', //グローバルメニューをここに表示すると指定
+            'container' => 'false',
+            'menu_class' => 'header-menu__list',
+          )
+        );
+        ?>
       </nav>
 
       <div class="drawer-btn is-sp">

@@ -219,6 +219,15 @@ a {
           transform: scale(1, 1);
 }
 
+.header-menu__item a {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.9px;
+  position: relative;
+}
+
 .header-menu__link {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 15px;
@@ -283,6 +292,14 @@ a {
 }
 .footer-menu__item:hover {
   cursor: pointer;
+}
+
+.footer-menu__item a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Montserrat", Arial, sans-serif;
+  letter-spacing: 0.84px;
 }
 
 .footer-menu__link {

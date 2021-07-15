@@ -30,10 +30,46 @@ function my_script_init()
 
 add_action('wp_enqueue_scripts', 'my_script_init');
 
-function get_element_image($image_name, $image_type = 'jpg') {
+/**
+ * メニューの登録
+ *
+ * 参考：https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_nav_menus
+ */
+function my_menu_init()
+{
+  register_nav_menus(
+    array(
+      'global' => 'ヘッダーメニュー',
+      'drawer' => 'ドロワーメニュー',
+      'footer' => 'フッターメニュー',
+      'footer-sp' => 'フッターメニュー(sp)',
+    )
+  );
+}
+add_action('init', 'my_menu_init');
+
+//メニューの<li>からID除去
+function removeMenuId($id)
+{
+  return $id = array();
+}
+add_filter('nav_menu_item_id', 'removeMenuId', 10);
+
+//メニューの<li>からクラス除去
+function removeMenuClass($classes)
+{
+  $classes = array();
+  $classes[] = 'header-menu__item';
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'removeMenuClass', 10, 2);
+
+function get_element_image($image_name, $image_type = 'jpg')
+{
   echo esc_url(get_template_directory_uri() . '/img/' . $image_name . '.' . $image_type);
 }
 
-function get_element_image_works($image_name) {
+function get_element_image_works($image_name)
+{
   echo esc_url(get_template_directory_uri() . '/img/works/' . $image_name . '.jpg');
 }
