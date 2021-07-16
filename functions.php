@@ -73,3 +73,18 @@ function get_element_image_works($image_name)
 {
   echo esc_url(get_template_directory_uri() . '/img/works/' . $image_name . '.jpg');
 }
+
+// グローバルメニューの動的表示
+
+function global_nav_menu($menu_tag, $menu_selecter) {
+  $args = array(
+    'depth' => 1,
+    'theme_location' => $menu_tag,
+    'container' => 'false',
+    'menu_class' => $menu_selecter . '-menu__list'
+  );
+
+  $global_menu = wp_nav_menu($args);
+
+  return $global_menu;
+}

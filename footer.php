@@ -1,8 +1,14 @@
 <footer class="footer">
     <div class="footer__inner">
-      <nav class="footer-menu">
+      <nav class="footer-menu is-pc">
+        <?php
+          global_nav_menu('footer', 'footer');
+        ?>
+      </nav>
+
+      <nav class="footer-menu is-sp">
         <ul class="footer-menu__list">
-          <li class="footer-menu__item is-sp"><a href="./index.html" class="footer-menu__link">HOME</a></li>
+          <li class="footer-menu__item"><a href="./index.html" class="footer-menu__link">HOME</a></li>
           <li class="footer-menu__item"><a href="./news.html" class="footer-menu__link">NEWS</a></li>
           <li class="footer-menu__item"><a href="./service.html" class="footer-menu__link">SERVICE</a></li>
           <li class="footer-menu__item"><a href="./works.html" class="footer-menu__link">WORKS</a></li>
