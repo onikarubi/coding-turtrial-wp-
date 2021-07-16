@@ -1,5 +1,7 @@
 jQuery(function () {
 
+  // jQuery('.header-menu__item').removeClass('menu-item-type-post_type menu-item-object-page menu-item-24 menu-item');
+
   const $headerSelecter = jQuery('.header');
   const $headerMenuSelecter = jQuery('.header-menu');
   const $pagetopButton = jQuery('.page-top');
