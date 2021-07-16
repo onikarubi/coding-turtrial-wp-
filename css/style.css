@@ -1622,7 +1622,7 @@ a {
     line-height: 1.25;
   }
   .heroarea {
-    background: url(../../img/hero.jpg) no-repeat center center/cover;
+    background: url(../img/hero.jpg) no-repeat center center/cover;
   }
   .heroarea__inner {
     text-align: left;
