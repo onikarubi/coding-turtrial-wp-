@@ -642,6 +642,17 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.breadcrumb__list span {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 45px;
+  text-transform: uppercase;
+  max-width: 100%;
+}
+.breadcrumb__list span a:hover{
+  text-decoration: underline;
+}
 .breadcrumb__text {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 12px;

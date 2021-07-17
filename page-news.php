@@ -1,18 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('./template/pages-heroarea'); ?>
 
-<div class="breadcrumb">
-  <div class="breadcrumb__inner">
-    <span class="breadcrumb__text">
-      <a class="breadcrumb__text-link" href="./index.html">home</a>
-    </span>
-    <span class="breadcrumb__text">
-      news
-    </span>
-  </div>
-</div>
-<!-- /.breadcrumb -->
-
 <section class="news-page">
   <div class="news-page__body">
     <div class="news-content__list">

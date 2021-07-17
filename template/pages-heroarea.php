@@ -1,40 +1,46 @@
 <?php
-  class PageBase {
-    private $slug_name;
+class PageBase
+{
+  private $slug_name;
 
-    private $subtitle_name = array(
-      'news' => 'お知らせ',
-      'service' => '事業内容',
-      'works' => '制作実績',
-      'company' => '私たちについて',
-      'recruit' => '採用情報',
-      'contact' => 'お問い合わせ'
-    );
+  private $subtitle_name = array(
+    'news' => 'お知らせ',
+    'service' => '事業内容',
+    'works' => '制作実績',
+    'company' => '私たちについて',
+    'recruit' => '採用情報',
+    'contact' => 'お問い合わせ'
+  );
 
-    private function get_slug_name() {
-      global $post;
-      $this->slug_name = $post->post_name;
-      return $this->slug_name;
-    }
-
-    private function change_subtitle() {
-      return $this->subtitle_name[$this->get_slug_name()];
-    }
-
-    public function display_menu_title() {
-      echo $this->get_slug_name();
-    }
-
-    public function display_menu_subtitle() {
-      echo $this->change_subtitle();
-    }
-
-    public function setting_test($function) {
-      var_dump($function);
-    }
+  private function get_slug_name()
+  {
+    global $post;
+    $this->slug_name = $post->post_name;
+    return $this->slug_name;
   }
 
-  $new_instance = new PageBase();
+  private function change_subtitle()
+  {
+    return $this->subtitle_name[$this->get_slug_name()];
+  }
+
+  public function display_menu_title()
+  {
+    echo $this->get_slug_name();
+  }
+
+  public function display_menu_subtitle()
+  {
+    echo $this->change_subtitle();
+  }
+
+  public function setting_test($function)
+  {
+    var_dump($function);
+  }
+}
+
+$new_instance = new PageBase();
 
 ?>
 
@@ -47,3 +53,16 @@
   </div>
 </div>
 <!-- /.heroarea__pages -->
+
+<div class="breadcrumb">
+  <div class="breadcrumb__inner">
+    <div class="breadcrumb__list">
+      <?php
+      if (function_exists('bcn_display')) {
+        bcn_display();
+      }
+      ?>
+    </div>
+  </div>
+</div>
+<!-- /.breadcrumb -->
