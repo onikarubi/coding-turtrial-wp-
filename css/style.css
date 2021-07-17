@@ -1777,7 +1777,7 @@ a {
     max-width: 100%;
     margin: 0;
     padding: 0 11px;
-    background: url(../../img/bg-circle.png) no-repeat center right/cover;
+    background: url(../img/bg-circle.png) no-repeat center right/cover;
   }
   .company__inner {
     display: block;
