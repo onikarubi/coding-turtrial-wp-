@@ -16,7 +16,12 @@ class PageBase
   {
     global $post;
     $this->slug_name = $post->post_name;
-    return $this->slug_name;
+
+    if (array_key_exists($this->slug_name, $this->subtitle_name)) {
+      return $this->slug_name;
+    } else {
+      return 'news';
+    }
   }
 
   private function change_subtitle()

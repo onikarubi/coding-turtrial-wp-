@@ -27,7 +27,7 @@
       <?php
       $args = array(
         'post_type' => 'post',
-        'posts_per_page' => '5',
+        'posts_per_page' => '3',
         'orderby' => 'date',
         'order' => 'DESC'
       );
