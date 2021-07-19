@@ -24,46 +24,42 @@
     </div>
 
     <div class="news-content">
-      <div class="news-content__list">
-        <a href="./article.html" class="news-content__item">
-          <div class="news-content__heading">
-            <time class="news-content__time" datetime="2030.02.01">2030.02.01</time>
-            <div class="news-content__label">
-              <span class="label-category">お知らせ</span>
-            </div>
-          </div>
+      <?php
+      $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => '5',
+        'orderby' => 'date',
+        'order' => 'DESC'
+      );
+      $new_archives = new WP_Query($args);
+      ?>
 
-          <div class="news-content__body">
-            <p class="news-content__text">Webデザインニュースサイト「ウェブマガジン」に取材いただきました</p>
-          </div>
-        </a>
+      <?php if ($new_archives->have_posts()) : ?>
+        <div class="news-content__list">
+          <?php while ($new_archives->have_posts()) :
+            $new_archives->the_post(); ?>
+            <a href="<?php the_permalink(); ?>" class="news-content__item">
+              <div class="news-content__heading">
+                <time class="news-content__time" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                  <div class="news-content__label">
+                    <span class="label-category">
+                      <?php
+                        $post_tag_name = get_the_tags();
+                        if ($post_tag_name[0]) {
+                          echo $post_tag_name[0]->name;
+                        }
+                      ?>
+                    </span>
+                  </div>
+              </div>
 
-        <a href="./article.html" class="news-content__item">
-          <div class="news-content__heading">
-            <time class="news-content__time" datetime="2030.01.25">2030.01.25</time>
-            <div class="news-content__label">
-              <span class="label-category">制作実績</span>
-            </div>
-          </div>
-
-          <div class="news-content__body">
-            <p class="news-content__text">Smoothiesta様のWebサイトを制作いたしました</p>
-          </div>
-        </a>
-
-        <a href="./article.html" class="news-content__item">
-          <div class="news-content__heading">
-            <time class="news-content__time" datetime="2030.01.20">2030.01.20</time>
-            <div class="news-content__label">
-              <span class="label-category">採用</span>
-            </div>
-          </div>
-
-          <div class="news-content__body">
-            <p class="news-content__text">Webデザイナーを１名募集中です！</p>
-          </div>
-        </a>
-      </div>
+              <div class="news-content__body">
+                <p class="news-content__text"><?php the_title(); ?></p>
+              </div>
+            </a>
+          <?php endwhile; ?>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 </section>
