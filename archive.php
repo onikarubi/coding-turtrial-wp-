@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('./template/pages-heroarea'); ?>
 
-
-
 <section class="news-page">
   <div class="news-page__body">
     <?php if (have_posts()) : ?>
