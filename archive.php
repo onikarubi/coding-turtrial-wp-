@@ -3,99 +3,43 @@
 
 <section class="news-page">
   <div class="news-page__body">
-    <div class="news-content__list">
-      <a href="./article.html" class="news-content__item">
-        <div class="news-content__heading">
-          <time class="news-content__time">2030.02.01</time>
-          <div class="news-content__label">
-            <span class="label-category">制作実績</span>
-          </div>
-        </div>
-        <div class="news-content__body">
-          <p class="news-content__text">Webデザインニュースサイト「ウェブマガジン」に取材いただきました</p>
-        </div>
-      </a>
-
-      <a href="./article.html" class="news-content__item">
-        <div class="news-content__heading">
-          <time class="news-content__time">2030.01.25</time>
-          <div class="news-content__label">
-            <span class="label-category">お知らせ</span>
-          </div>
-        </div>
-        <div class="news-content__body">
-          <p class="news-content__text">Smoothiesta様のWebサイトを制作いたしました</p>
-        </div>
-      </a>
-
-      <a href="./article.html" class="news-content__item">
-        <div class="news-content__heading">
-          <time class="news-content__time">2030.01.20</time>
-          <div class="news-content__label">
-            <span class="label-category">採用</span>
-          </div>
-        </div>
-        <div class="news-content__body">
-          <p class="news-content__text">Webデザイナーを１名募集中です！</p>
-        </div>
-      </a>
-
-      <a href="./article.html" class="news-content__item">
-        <div class="news-content__heading">
-          <time class="news-content__time">2030.01.20</time>
-          <div class="news-content__label">
-            <span class="label-category">採用</span>
-          </div>
-        </div>
-        <div class="news-content__body">
-          <p class="news-content__text">（２行のテキストの場合）テキストが入るテキストが入るテキストが入るテキストが入るテキストが入るテキストが入るテキストが入るテキストが入るテキストが入るテキストが入る</p>
-        </div>
-      </a>
-
-      <a href="./article.html" class="news-content__item">
-        <div class="news-content__heading">
-          <time class="news-content__time">2030.01.20</time>
-          <div class="news-content__label">
-            <span class="label-category">採用</span>
-          </div>
-        </div>
-        <div class="news-content__body">
-          <p class="news-content__text">テキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
-        </div>
-      </a>
-
-      <a href="./article.html" class="news-content__item">
-        <div class="news-content__heading">
-          <time class="news-content__time">2030.01.20</time>
-          <div class="news-content__label">
-            <span class="label-category">採用</span>
-          </div>
-        </div>
-        <div class="news-content__body">
-          <p class="news-content__text">テキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
-        </div>
-      </a>
-
-      <a href="./article.html" class="news-content__item">
-        <div class="news-content__heading">
-          <time class="news-content__time">2030.01.20</time>
-          <div class="news-content__label">
-            <span class="label-category">採用</span>
-          </div>
-        </div>
-        <div class="news-content__body">
-          <p class="news-content__text">テキストが入りますテキストが入りますテキストが入りますテキストが入ります</p>
-        </div>
-      </a>
-    </div>
+    <?php if (have_posts()) : ?>
+      <div class="news-content__list">
+        <?php while(have_posts()) : the_post() ?>
+          <a href="<?php the_permalink(); ?>" class="news-content__item">
+            <div class="news-content__heading">
+              <time class="news-content__time" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+              <div class="news-content__label">
+                <span class="label-category">
+                  <?php
+                  $post_tag_name = get_the_tags();
+                  if ($post_tag_name[0]) {
+                    echo $post_tag_name[0]->name;
+                  }
+                  ?>
+                </span>
+              </div>
+            </div>
+            <div class="news-content__body">
+              <p class="news-content__text"><?php the_title(); ?></p>
+            </div>
+          </a>
+        <?php endwhile; ?>
+      </div>
+    <?php endif; ?>
   </div>
   <div class="news-page__footer">
     <div class="pagenation">
-      <div class="pagenation__item">
-        <a href="#" class="pagenation__link --current">1</a>
-        <a href="#" class="pagenation__link">2</a>
-        <a href="#" class="pagenation__link">3</a>
-      </div>
+      <?php
+      echo
+        paginate_links(
+          array(
+            'end_size' => 1,
+            'mid_size' => 1, //もし2に変更した場合、両方のファイルを修正する必要がある
+            'prev_next' => false,
+          )
+        );
+      ?>
     </div>
   </div>
 </section>

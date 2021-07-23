@@ -999,7 +999,7 @@ a {
   margin-top: 40px;
 }
 
-.pagenation__item {
+.pagenation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1010,7 +1010,7 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.pagenation__link {
+.page-numbers {
   display: inline-block;
   text-decoration: none;
   width: 45px;
@@ -1027,7 +1027,7 @@ a {
   margin-right: 5px;
   margin-left: 5px;
 }
-.pagenation__link.--current {
+.page-numbers.current {
   background: #F1EBF8;
   color: #4F31A5;
 }
