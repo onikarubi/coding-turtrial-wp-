@@ -15,7 +15,7 @@
 
   <header class="header">
     <div class="header__inner">
-      <a href="./index.html" class="header-logo">
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="header-logo">
         <img src="<?php get_element_image('logo', 'svg'); ?>" alt="header-logo">
       </a>
       <nav class="header-menu is-pc">
