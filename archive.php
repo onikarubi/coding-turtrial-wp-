@@ -14,7 +14,7 @@
                   <?php
                   $post_tag_name = get_the_tags();
                   if ($post_tag_name[0]) {
-                    echo $post_tag_name[0]->name;
+                    echo esc_html($post_tag_name[0]->name);
                   }
                   ?>
                 </span>

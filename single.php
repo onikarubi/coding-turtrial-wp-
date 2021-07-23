@@ -19,7 +19,7 @@
                 <?php
                   $post_tag_name = get_the_tags();
                   if ($post_tag_name[0]) {
-                    echo $post_tag_name[0]->name;
+                    echo esc_html($post_tag_name[0]->name);
                   }
                 ?>
               </span>
@@ -59,17 +59,17 @@
           <div class="post-pager">
             <?php if($prev_post) : ?>
             <div class="post-pager__previous">
-              <a href="<?php echo get_permalink($prev_post->ID); ?>" class="post-pager__title"><?php echo get_the_title($prev_post); ?></a>
+              <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" class="post-pager__title"><?php echo esc_html(get_the_title($prev_post)); ?></a>
             </div>
             <?php endif; ?>
             <?php if($next_post) : ?>
             <div class="post-pager__next">
-              <a href="<?php echo get_permalink($next_post->ID); ?>" class="post-pager__title"><?php echo get_the_title($next_post); ?></a>
+              <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" class="post-pager__title"><?php echo esc_html(get_the_title($next_post)); ?></a>
             </div>
             <?php endif; ?>
           </div>
           <div class="location-page__news">
-            <a href="<?php echo home_url('category/news/'); ?>" class="news-page__link">NEWS一覧</a>
+            <a href="<?php echo esc_url(home_url('category/news/')); ?>" class="news-page__link">NEWS一覧</a>
           </div>
         </div>
         <!-- article__footer -->
