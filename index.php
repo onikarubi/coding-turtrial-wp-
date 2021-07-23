@@ -8,7 +8,7 @@
     </div>
 
     <div class="heroarea__footer">
-      <a href="#" class="btn btn--transparent">CONTACT</a>
+      <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn--transparent">CONTACT</a>
     </div>
   </div>
 
@@ -107,7 +107,7 @@
     </div>
 
     <div class="service__footer is-pc">
-      <a href="./service.html" class="btn btn--more">more</a>
+      <a href="<?php echo esc_url(home_url('/service')); ?>" class="btn btn--more">more</a>
     </div>
   </div>
 </section>
@@ -140,7 +140,7 @@
         <p class="works-content__text message-text">様々なジャンルのWebサイト制作が可能です。<br> ご購入やお申込み数の増加などを実現します！</p>
       </div>
       <div class="works-content__footer">
-        <a href="./works.html" class="btn btn--more">more</a>
+        <a href="<?php echo esc_url(home_url('/works')); ?>" class="btn btn--more">more</a>
       </div>
     </div>
   </div>
@@ -177,7 +177,7 @@
       </div>
 
       <div class="company__footer">
-        <a href="./company.html" class="btn btn--more">more</a>
+        <a href="<?php echo esc_url(home_url('/company')); ?>" class="btn btn--more">more</a>
       </div>
     </div>
   </div>
@@ -198,7 +198,7 @@
         <p class="recquit-message__text message-text">私たちと一緒に働きませんか？</p>
       </div>
       <div class="recquit-message__footer">
-        <a href="./recruit.html" class="btn btn--more">more</a>
+        <a href="<?php echo esc_url(home_url('/recruit')); ?>" class="btn btn--more">more</a>
       </div>
     </div>
     <div class="recquit__right is-pc">
